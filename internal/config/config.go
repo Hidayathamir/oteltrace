@@ -43,26 +43,22 @@ func GetBool(k string) (bool, error) {
 	return v, nil
 }
 
-func GetOtelAlwaysSample() (bool, error) {
-	return GetBool("X_GOOTEL_OTEL_ALWAYS_SAMPLE")
-}
-
 func GetServiceName() (string, error) {
-	return GetString("X_GOOTEL_APP_SERVICE_NAME")
+	return GetString("X_OTELTRACE_APP_SERVICE_NAME")
 }
 
 func GetAppVersion() (string, error) {
-	return GetString("X_GOOTEL_APP_VERSION")
+	return GetString("X_OTELTRACE_APP_VERSION")
 }
 
 func GetAppEnvironment() (string, error) {
-	return GetString("X_GOOTEL_APP_ENVIRONMENT")
+	return GetString("X_OTELTRACE_APP_ENVIRONMENT")
 }
 
 func GetOtelOTLPNewrelicHost() (string, error) {
-	return GetString("X_GOOTEL_OTEL_OTLP_NEWRELIC_HOST")
+	return GetString("X_OTELTRACE_OTEL_OTLP_NEWRELIC_HOST")
 }
 
 func GetOtelOTLPNewrelicHeaderAPIKey() (string, error) {
-	return GetString("X_GOOTEL_OTEL_OTLP_NEWRELIC_HEADER_API_KEY")
+	return GetString("X_OTELTRACE_OTEL_OTLP_NEWRELIC_HEADER_API_KEY")
 }
