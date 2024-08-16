@@ -18,12 +18,12 @@ func GetString(k string) (string, error) {
 func GetInt(k string) (int, error) {
 	vStr, err := GetString(k)
 	if err != nil {
-		return 0, fmt.Errorf("error get string")
+		return 0, fmt.Errorf("error get string:: %w", err)
 	}
 
 	v, err := strconv.Atoi(vStr)
 	if err != nil {
-		return 0, fmt.Errorf("error convert string '%s' to int", vStr)
+		return 0, fmt.Errorf("error convert string '%s' to int:: %w", vStr, err)
 	}
 
 	return v, nil
@@ -32,12 +32,12 @@ func GetInt(k string) (int, error) {
 func GetBool(k string) (bool, error) {
 	vStr, err := GetString(k)
 	if err != nil {
-		return false, fmt.Errorf("error get string")
+		return false, fmt.Errorf("error get string:: %w", err)
 	}
 
 	v, err := strconv.ParseBool(vStr)
 	if err != nil {
-		return false, fmt.Errorf("error convert string '%s' to bool", vStr)
+		return false, fmt.Errorf("error convert string '%s' to bool:: %w", vStr, err)
 	}
 
 	return v, nil
