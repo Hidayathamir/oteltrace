@@ -92,6 +92,7 @@ import (
 
 func extapiHTTPFoo(ctx context.Context) {
 	client = &http.Client{Transport: otelhttp.NewTransport(http.DefaultTransport)}
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, "https://foo.com", nil)
 	res, err := client.Do(req)
 }
 
